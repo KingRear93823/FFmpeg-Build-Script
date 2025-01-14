@@ -8,17 +8,26 @@ on:
 
 defaults:
   run:
-    working-directory: C:\
     shell: cmd
   
 jobs:
   Build_FFmpeg:
     runs-on: windows-2019
     steps:
-      #- name: Checkout FFmpeg
+      - name: Checkout FFmpeg
       - uses: actions/checkout@v4
         with:
           repository: FFmpeg/FFmpeg
           ref: release/7.1
-      - run: dir
-        working-directory: C:\
+      
+      - name: Install YASM
+        run: choco install yasm
+
+      - uses: ilammy/msvc-dev-cmd@v1
+      - name: Configure and install FFmpeg
+        working-directory: ${{ GITHUB_WORKSPACE }}\${{ github.repository }}
+        run: |
+          dir
+          ./configure --target-os=win64 --arch=x86_64 --toolchain=msvc --enable-shared --disable-static
+          make
+          make install
