@@ -10,6 +10,7 @@ jobs:
   Build_FFmpeg:
     runs-on: windows-2019
     steps:
+      - uses: ilammy/msvc-dev-cmd@v1
       - name: Checkout FFmpeg
       - working-directory: C:\
       - uses: actions/checkout@v4
