@@ -21,12 +21,3 @@ jobs:
       - name: Install YASM
         shell: cmd
         run: choco install yasm
-
-      - name: Configure and install FFmpeg
-      - working-directory: C:\${{ github.repository }}
-        shell: cmd
-        run: |
-          dir
-          ./configure --target-os=win64 --arch=x86_64 --toolchain=msvc --enable-shared --disable-static
-          make
-          make install
