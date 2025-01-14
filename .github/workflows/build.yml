@@ -14,7 +14,6 @@ jobs:
   Build_FFmpeg:
     runs-on: windows-2019
     steps:
-      - name: Checkout FFmpeg
       - uses: ilammy/msvc-dev-cmd@v1
       - uses: actions/checkout@v4
         with:
