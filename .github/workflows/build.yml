@@ -15,17 +15,16 @@ jobs:
         with:
           repository: FFmpeg/FFmpeg
           ref: release/7.1
+          
       - name: Install YASM
         shell: cmd
         run: choco install yasm
+        
+      - working-directory: C:\FFmpeg-Build-Script\FFmpeg-Build-Script
       - uses: ilammy/msvc-dev-cmd@v1
       - name: Configure and install FFmpeg
         shell: cmd
         run: |
-          dir
-          cd C:\
-          dir
-          cd D:\
           dir
           ./configure --target-os=win64 --arch=x86_64 --toolchain=msvc --enable-shared --disable-static
           make
