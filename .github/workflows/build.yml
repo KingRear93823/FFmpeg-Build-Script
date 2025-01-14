@@ -7,7 +7,7 @@ on:
       - 'LICENSE'
 
 jobs:
-  build:
+  Build_FFmpeg:
     runs-on: windows-2019
     steps:
       - uses: actions/checkout@v4
@@ -17,3 +17,10 @@ jobs:
       - name: Install YASM
         shell: cmd
         run: choco install yasm
+      - uses: ilammy/msvc-dev-cmd@v1
+      - name: Configure and install FFmpeg
+        shell: cmd
+        run: |
+          configure --target-os=win64 --arch=x86_64 --toolchain=msvc --enable-shared --disable-static
+          make
+          make install
