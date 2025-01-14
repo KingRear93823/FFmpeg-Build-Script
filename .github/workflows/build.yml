@@ -10,6 +10,7 @@ jobs:
   Build_FFmpeg:
     runs-on: windows-2019
     steps:
+      - working-directory: C:\
       - name: Checkout FFmpeg
         uses: actions/checkout@v4
         with:
