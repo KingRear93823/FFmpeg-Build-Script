@@ -16,5 +16,6 @@ jobs:
         with:
           repository: https://github.com/FFmpeg/FFmpeg.git
           ref: release/7.1
-      - shell: cmd
+      - name: Install YASM
+        shell: cmd
         run: choco install yasm
