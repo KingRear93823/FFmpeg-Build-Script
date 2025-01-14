@@ -20,7 +20,7 @@ jobs:
         shell: cmd
         run: choco install yasm
         
-      - working-directory: C:\FFmpeg-Build-Script\FFmpeg-Build-Script
+      - working-directory: C:\${{ github.repository }}
       - uses: ilammy/msvc-dev-cmd@v1
       - name: Configure and install FFmpeg
         shell: cmd
