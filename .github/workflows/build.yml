@@ -16,3 +16,5 @@ jobs:
           repository: FFmpeg/FFmpeg
           ref: release/7.1
       - name: Checkout FFmpeg
+      - working-directory: C:\
+        run: dir
