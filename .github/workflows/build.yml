@@ -24,8 +24,10 @@ jobs:
         run: choco install yasm
 
       - name: Configure and install FFmpeg
-        working-directory: ${GITHUB_WORKSPACE}\${{ github.repository }}
+        # working-directory: ${GITHUB_WORKSPACE}\${{ github.repository }}
         run: |
+          dir
+          cd FFmpeg
           dir
           ./configure --target-os=win64 --arch=x86_64 --toolchain=msvc --enable-shared --disable-static
           make
