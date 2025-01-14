@@ -11,12 +11,12 @@ jobs:
     runs-on: windows-2019
     steps:
       - uses: ilammy/msvc-dev-cmd@v1
-      - name: Checkout FFmpeg
-      - working-directory: C:\
       - uses: actions/checkout@v4
         with:
           repository: FFmpeg/FFmpeg
           ref: release/7.1
+      - name: Checkout FFmpeg
+      - working-directory: C:\
           
       - name: Install YASM
         shell: cmd
