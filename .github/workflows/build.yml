@@ -10,11 +10,11 @@ jobs:
   build:
     runs-on: windows-2019
     steps:
-      - name: Checkout FFmpeg repository
       - uses: actions/checkout@v4
         with:
           repository: https://github.com/FFmpeg/FFmpeg.git
           ref: release/7.1
+      - name: Checkout FFmpeg repository
       - name: Install YASM
         shell: cmd
         run: choco install yasm
