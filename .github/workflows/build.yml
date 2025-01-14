@@ -15,5 +15,6 @@ jobs:
         with:
           repository: FFmpeg/FFmpeg
           ref: release/7.1
+          path: ../
       - run: dir
         working-directory: C:\
