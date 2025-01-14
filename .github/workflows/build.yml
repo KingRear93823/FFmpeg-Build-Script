@@ -15,6 +15,7 @@ jobs:
     runs-on: windows-2019
     steps:
       - name: Checkout FFmpeg
+      - uses: ilammy/msvc-dev-cmd@v1
       - uses: actions/checkout@v4
         with:
           repository: FFmpeg/FFmpeg
@@ -22,6 +23,3 @@ jobs:
       
       - name: Install YASM
         run: choco install yasm
-
-      - name: A
-        run: dir
