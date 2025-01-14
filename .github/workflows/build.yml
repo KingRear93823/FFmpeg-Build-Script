@@ -10,6 +10,7 @@ jobs:
   Build_FFmpeg:
     runs-on: windows-2019
     steps:
+      - name: Checkout FFmpeg
       - working-directory: C:\
       - uses: actions/checkout@v4
         with:
@@ -19,10 +20,9 @@ jobs:
       - name: Install YASM
         shell: cmd
         run: choco install yasm
-        
-      - working-directory: C:\${{ github.repository }}
-      - uses: ilammy/msvc-dev-cmd@v1
+
       - name: Configure and install FFmpeg
+      - working-directory: C:\${{ github.repository }}
         shell: cmd
         run: |
           dir
