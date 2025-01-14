@@ -17,7 +17,3 @@ jobs:
           ref: release/7.1
       - name: Checkout FFmpeg
       - working-directory: C:\
-          
-      - name: Install YASM
-        shell: cmd
-        run: choco install yasm
