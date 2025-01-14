@@ -7,8 +7,7 @@ on:
       - 'LICENSE'
 
 jobs:
-  configure:
-    name: Configure FFmpeg
+  build:
     runs-on: windows-2019
     steps:
       - name: Checkout FFmpeg repository
