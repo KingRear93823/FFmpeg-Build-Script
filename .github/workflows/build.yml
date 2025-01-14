@@ -19,3 +19,6 @@ jobs:
         with:
           repository: FFmpeg/FFmpeg
           ref: release/7.1
+
+      - name: Install YASM
+        run: choco install yasm
